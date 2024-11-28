@@ -1,0 +1,25 @@
+{
+  "name": "cse341-fproject",
+  "version": "1.0.0",
+  "description": "CSE 341 Final Project - Group Project - Smart Book API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joy935/cse341-fproject"
+  },
+  "author": "Ana Caroline Facinetto, Leonardo Guarino, Kaitlyn Kryzanski and Veihi Tupai",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mongodb": "^6.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
