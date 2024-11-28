@@ -1,7 +1,7 @@
 {
   "name": "cse341-fproject",
   "version": "1.0.0",
-  "description": "CSE 341 Final Project - Group Project - Smart Book API",
+  "description": "CSE 341 Final Project - Group Project - BookSmart API",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
