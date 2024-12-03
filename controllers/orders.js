@@ -1,8 +1,10 @@
-const mongodb = require('../data/database');
-const ObjectId = require('mongodb').ObjectId;
+const mongodb = require("../data/database");
+const ObjectId = require("mongodb").ObjectId;
 
 const getOrders = async (req, res) => {
-    // #swagger.tags = ['Orders']
+    // #swagger.tags = ["Orders"]
+    // #swagger.summary = "Get all orders"
+    // #swagger.description = "Get all orders"
     try {
         const result = await mongodb.getDb().db().collection("order").find();
         result.toArray().then((orders) => {
@@ -10,12 +12,14 @@ const getOrders = async (req, res) => {
             res.status(200).json(orders);
         });
     } catch (error) {
-        res.status(500).json(error || 'Some error occurred while fetching the orders.');
+        res.status(500).json(error || "Some error occurred while fetching the orders.");
     }
 };
 
 const getOrder = async (req, res) => {
-    // #swagger.tags = ['Orders']
+    // #swagger.tags = ["Orders"]
+    // #swagger.summary = "Get a specific order"
+    // #swagger.description = "Get a specific order"
     try {
         const orderId = new ObjectId(req.params.id);
         if (!orderId) {
@@ -35,7 +39,9 @@ const getOrder = async (req, res) => {
 }
 
 const createOrder = async (req, res) => {
-    // #swagger.tags = ['Orders']
+    // #swagger.tags = ["Orders"]
+    // #swagger.summary = "Create a new order"
+    // #swagger.description = "Create a new order"
     try {
         const order = { // adjust the fields as the database
             userId: req.body.userId,
@@ -57,6 +63,8 @@ const createOrder = async (req, res) => {
 
 const updateOrder = async (req,res) => {
     // #swagger.tags = ["Orders"]
+    // #swagger.summary = "Update a specific order"
+    // #swagger.description = "Update a specific order"
     try {
         const orderId = new ObjectId(req.params.id);
         if (!orderId) {
@@ -81,7 +89,9 @@ const updateOrder = async (req,res) => {
 };
 
 const deleteOrder = async (req, res) => {
-    // #swagger.tags = ['Orders']
+    // #swagger.tags = ["Orders"]
+    // #swagger.description = "Delete a specific order"å
+    // #swagger.description = "Delete a specific order"
     try {
         const orderId = new ObjectId(req.params.id);
         if (!orderId) {
