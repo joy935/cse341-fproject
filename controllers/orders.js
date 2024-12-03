@@ -6,7 +6,7 @@ const getOrders = async (req, res) => {
     try {
         const result = await mongodb.getDb().db().collection("order").find();
         result.toArray().then((orders) => {
-            res.setHeader('Content-Type", "application/json');
+            res.setHeader("Content-Type", "application/json");
             res.status(200).json(orders);
         });
     } catch (error) {
