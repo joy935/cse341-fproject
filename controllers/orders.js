@@ -38,8 +38,8 @@ const createOrder = async (req, res) => {
     // #swagger.tags = ['Orders']
     try {
         const order = { // adjust the fields as the database
-            user: req.body.user,
-            book: req.body.book,
+            userId: req.body.userId,
+            bookId: req.body.bookId,
             total: req.body.total,
             date: req.body.date,
             status: req.body.status
@@ -63,8 +63,8 @@ const updateOrder = async (req,res) => {
             res.status(500).json("Order ID not found.");
         }
         const order = { // adjust the fields as the database
-            user: req.body.user,
-            book: req.body.book,
+            userId: req.body.userId,
+            bookId: req.body.bookId,
             total: req.body.total,
             date: req.body.date,
             status: req.body.status
