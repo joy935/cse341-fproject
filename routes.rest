@@ -1,0 +1,43 @@
+### using Postman to test the API
+
+############################################
+###### Localhost port 3000 ######
+
+### Orders ###
+# get all the orders
+GET http://localhost:3000/orders
+
+# get a specific order
+# ex: id
+GET http://localhost:3000/orders/id
+
+# create a new order
+# ex: 
+POST http://localhost:3000/orders
+{
+    "userId": "example" ,
+    "bookId": "example",
+    "total": "example",
+    "date": "example",
+    "status": "example"
+}
+
+# update a specific order
+# ex: id
+PUT http://localhost:3000/orders/id
+{
+    "userId": "example" ,
+    "bookId": "example",
+    "total": "example",
+    "date": "example",
+    "status": "example"
+}
+
+# delete a specific order
+# ex: id
+DELETE http://localhost:3000/orders/id
+
+############################################
+###### Render ######
+
+### Orders ###
