@@ -1,6 +1,4 @@
-const { ObjectId } = require("mongodb");
-
-const validator = require("/helper/validate");
+const validator = require("../helper/validate");
 const saveOrder = async (req, res, next) => {
     const validationRule = {
         "userId": "required|string",
