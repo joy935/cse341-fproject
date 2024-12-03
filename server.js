@@ -8,8 +8,15 @@ const PORT = process.env.PORT || 3000;
 const routes = require("./routes");
 
 // app.use(express.json());
-app.use(bodyParser.json());
-app.use("/", routes);
+app.use(bodyParser.json())
+    .use("/", routes);
+
+process.on("uncaughtException", (err, origin) => {
+    console.log(
+      process.stderr.fd,
+      `Caught exception: ${err}\n` + `Exception origin: ${origin}`
+    );
+  });
 
 mongodb.initDb((error) => {
   if (error) {
