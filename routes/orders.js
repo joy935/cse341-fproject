@@ -1,16 +1,16 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const validate = require('../helper/validate');
-const ordersController = require('../controllers/orders');
+const saveOrder = require("../middleware/validate");
+const ordersController = require("../controllers/orders");
 
-router.get('/', ordersController.getOrders);
+router.get("/", ordersController.getOrders);
 
-router.get('/:id', ordersController.getOrder);
+router.get("/:id", ordersController.getOrder);
 
-router.post('/',validate.saveOrder, ordersController.createOrder);
+router.post("/", saveOrder, ordersController.createOrder);
 
-router.put('/:id', validate.saveOrder ,ordersController.updateOrder);
+router.put("/:id", saveOrder, ordersController.updateOrder);
 
-router.delete('/:id', ordersController.deleteOrder);
+router.delete("/:id", ordersController.deleteOrder);
 
 module.exports = router;
