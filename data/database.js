@@ -10,7 +10,7 @@ const initDb = (callback) => {
     console.log("Database is already initialized");
     return callback(null, database);
   } else {
-    MongoClient.connect(process.env.MONGODB_URL) // eslint-disable-line no-undef
+    MongoClient.connect(process.env.MONGODB_URL)
       .then((client) => {
         database = client;
         callback(null, database);

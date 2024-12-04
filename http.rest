@@ -1,0 +1,33 @@
+// USER ENDPOINT
+
+### get all users
+GET http://localhost:3000/Users/  
+
+
+### get users by id: e.g.: 
+GET http://localhost:3000/users/674f9e3a05f7016678f54422
+
+
+### Create a user
+POST http://localhost:3000/users/ HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "carlos",
+    "lastName": "Peres",
+    "email": "carlos@email.com",
+    "address": "123 Cash St, Selvy, ST 3321"
+}
+### Update a user
+PUT http://localhost:3000/users/674f9ff7ab88242c6824e7fe HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "carlos",
+    "lastName": "Peres",
+    "email": "carlos@email.com",
+    "address": "123 Cash St, Selvy, ST 3328"
+}
+
+### delete a user
+DELETE http://localhost:3000/users/674f9cc0573d2632b2266aea HTTP/1.1
