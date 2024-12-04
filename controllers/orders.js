@@ -6,7 +6,7 @@ const getOrders = async (req, res) => {
     // #swagger.summary = "Get all orders"
     // #swagger.description = "Get all orders"
     try {
-        const result = await mongodb.getDb().db().collection("order").find();
+        const result = await mongodb.getDb().db().collection("Orders").find();
         result.toArray().then((orders) => {
             res.setHeader("Content-Type", "application/json");
             res.status(200).json(orders);
@@ -25,7 +25,7 @@ const getOrder = async (req, res) => {
         if (!orderId) {
             res.status(500).json("Book ID not found.");
         }
-        const result = await mongodb.getDb().db().collection("order").find({ _id: orderId });
+        const result = await mongodb.getDb().db().collection("Orders").find({ _id: orderId });
         if (!result) {
             res.status(404).json("Order not found.");
         }
@@ -50,7 +50,7 @@ const createOrder = async (req, res) => {
             date: req.body.date,
             status: req.body.status
         };
-        const response = await mongodb.getDb().db().collection("order").insertOne(order);
+        const response = await mongodb.getDb().db().collection("Orders").insertOne(order);
         if (response.acknowledged) {
             res.status(204).send();
         } else {
@@ -77,7 +77,7 @@ const updateOrder = async (req,res) => {
             date: req.body.date,
             status: req.body.status
         };
-        const response = await mongodb.getDb().db().collection("order").replaceOne({ _id: orderId }, order);
+        const response = await mongodb.getDb().db().collection("Orders").replaceOne({ _id: orderId }, order);
         if (response.modifiedCount > 0) {
             res.status(204).send();
         } else {
@@ -97,7 +97,7 @@ const deleteOrder = async (req, res) => {
         if (!orderId) {
             res.status(500).json("Order ID not found.");
         }
-        const response = await mongodb.getDb().db().collection("order").deleteOne({ _id: orderId }, true);
+        const response = await mongodb.getDb().db().collection("Orders").deleteOne({ _id: orderId }, true);
         if (response.deletedCount > 0) {
             res.status(204).send();
         } else {
