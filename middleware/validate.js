@@ -43,7 +43,33 @@ const saveOrder = async (req, res, next) => {
     }).catch (err => console.log(err))
 };
 
+const saveBook = (req, res, next) => {
+    const validationRule = {
+        title: "required|string",
+        author: "required|string",
+        categoryId: "required|string",
+        description: "required|string",
+        isbn: "required|string",
+        price: "required|numeric",
+        publisher: "required|string"
+    };
+    validator(req.body, validationRule, {}, (err, status) => {
+        if (!status) {
+            res.status(412).send({
+                success: false,
+                message: "Validation failed",
+                data: err
+            });
+        } else {
+            next();
+        }
+    });
+};
+
+
+
 module.exports = {
   saveUser,
-  saveOrder
+  saveOrder,
+  saveBook
 };
