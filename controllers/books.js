@@ -2,6 +2,8 @@ const mongodb = require("../data/database");
 const ObjectId = require("mongodb").ObjectId;
 
 const getBooks = async (req, res) => {
+    // #swagger.tags = ["Books"]
+    // #swagger.summary = "Get all books"
     try {
         const result = await mongodb.getDb().db().collection("Books").find();
         result.toArray().then((books) => {
@@ -14,6 +16,8 @@ const getBooks = async (req, res) => {
 };
 
 const getBook = async (req, res) => {
+    // #swagger.tags = ["Books"]
+    // #swagger.summary = "Get a book by ID"
     try {
         const bookId = new ObjectId(req.params.id);
         if (!bookId) {
@@ -32,6 +36,8 @@ const getBook = async (req, res) => {
 };
 
 const createBook = async (req, res) => {
+    // #swagger.tags = ["Books"]
+    // #swagger.summary = "Create a new book"
     try {
         const book = {
             title: req.body.title,
@@ -54,6 +60,8 @@ const createBook = async (req, res) => {
 };
 
 const updateBook = async (req, res) => {
+    // #swagger.tags = ["Books"]
+    // #swagger.summary = "Update a book by ID"
     try {
         const bookId = new ObjectId(req.params.id);
         if (!bookId) {
@@ -80,6 +88,8 @@ const updateBook = async (req, res) => {
 };
 
 const deleteBook = async (req, res) => {
+    // #swagger.tags = ["Books"]
+    // #swagger.summary = "Delete a book by ID"
     try {
         const bookId = new ObjectId(req.params.id);
         if (!bookId) {
