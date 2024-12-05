@@ -1,10 +1,10 @@
 const validator = require("../helper/validate");
 const saveOrder = async (req, res, next) => {
     const validationRule = {
-        "userId": "required|string",
-        "bookId": "required|string",
-        "total": "required|numeric",
+        "customerId": "required|string",
         "date": "required|date",
+        "total": "required|numeric",
+        "bookId": "required|string",
         "status": "required|string"
     }
 
