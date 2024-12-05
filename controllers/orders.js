@@ -43,11 +43,11 @@ const createOrder = async (req, res) => {
     // #swagger.summary = "Create a new order"
     // #swagger.description = "Create a new order"
     try {
-        const order = { // adjust the fields as the database
-            userId: req.body.userId,
-            bookId: req.body.bookId,
-            total: req.body.total,
+        const order = {
+            customerId: req.body.customerId,
             date: req.body.date,
+            total: req.body.total,
+            bookId: req.body.bookId,
             status: req.body.status
         };
         const response = await mongodb.getDb().db().collection("Orders").insertOne(order);
@@ -70,11 +70,11 @@ const updateOrder = async (req,res) => {
         if (!orderId) {
             res.status(500).json("Order ID not found.");
         }
-        const order = { // adjust the fields as the database
-            userId: req.body.userId,
-            bookId: req.body.bookId,
-            total: req.body.total,
+        const order = {
+            customerId: req.body.customerId,
             date: req.body.date,
+            total: req.body.total,
+            bookId: req.body.bookId,
             status: req.body.status
         };
         const response = await mongodb.getDb().db().collection("Orders").replaceOne({ _id: orderId }, order);
