@@ -15,10 +15,6 @@ process.on("uncaughtException", (err, origin) => {
   );
 });
 
-// app.listen(port, () => {
-//   console.log(`Server is running on port ${port}`);
-// });
-
 //Initializing Database and node app
 mongodb.initDb((err) => {
   if (err) {
