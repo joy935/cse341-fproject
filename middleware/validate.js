@@ -66,13 +66,6 @@ const saveBook = (req, res, next) => {
     });
 };
 
-
-
-module.exports = {
-  saveUser,
-  saveOrder,
-  saveBook
-
 const saveCategory = async (req, res, next) => {
   const validationRule = {
       "categoryAcronym": "required|string",
@@ -93,9 +86,9 @@ const saveCategory = async (req, res, next) => {
   }).catch( err => console.log(err))
 };
 
-
 module.exports = {
   saveUser,
+  saveOrder,
+  saveBook,
   saveCategory
-
 };
