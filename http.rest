@@ -1,7 +1,7 @@
 // USER ENDPOINT
 
 ### get all users
-GET http://localhost:3000/Users/  
+GET http://localhost:3000/users/  
 
 
 ### get users by id: e.g.: 
@@ -31,6 +31,7 @@ content-type: application/json
 
 ### delete a user
 DELETE http://localhost:3000/users/674f9cc0573d2632b2266aea HTTP/1.1
+
 
 
 ### BOOK ENDPOINT
@@ -72,3 +73,36 @@ content-type: application/json
 
 ### delete a book
 DELETE http://localhost:3000/books/674f9e3a05f7016678f54422 HTTP/1.1    
+
+// CATEGORY ENDPOINT
+
+### get all categories
+GET http://localhost:3000/categories/  
+
+
+### get categories by id: e.g.: 
+GET http://localhost:3000/categories/674796548f918be2dbc6c029
+
+
+### Create a category
+POST http://localhost:3000/categories/ HTTP/1.1
+content-type: application/json
+
+{
+    "categoryAcronym" : "CHI010",
+    "categoryName" : "Children"
+}
+
+### Update a category
+PUT http://localhost:3000/categories/674796548f918be2dbc6c029 HTTP/1.1
+content-type: application/json
+
+{
+    "categoryAcronym" : "CHI010",
+    "categoryName" : "Children"
+}
+
+### delete a category
+DELETE http://localhost:3000/categories/674796548f918be2dbc6c029 HTTP/1.1
+
+

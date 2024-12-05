@@ -20,6 +20,7 @@ const saveUser = (req, res, next) => {
   });
 };
 
+
 const saveOrder = async (req, res, next) => {
   const validationRule = {
     customerId: "required|string",
@@ -71,4 +72,30 @@ module.exports = {
   saveUser,
   saveOrder,
   saveBook
+
+const saveCategory = async (req, res, next) => {
+  const validationRule = {
+      "categoryAcronym": "required|string",
+      "categoryName": "required|string"
+  };
+
+  await validator(req.body, validationRule, {}, (err, status) => {
+      if (!status) {
+          res.status(412)
+              .send({
+                  success: false,
+                  message: 'Validation failed',
+                  data: err
+              });
+      } else {
+          next();
+      }
+  }).catch( err => console.log(err))
+};
+
+
+module.exports = {
+  saveUser,
+  saveCategory
+
 };
