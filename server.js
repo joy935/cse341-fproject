@@ -1,29 +1,27 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 const app = express();
-
 const mongodb = require("./data/database");
+const port = process.env.PORT || 3000;
 
-const PORT = process.env.PORT || 3000;
+app.use(express.json());
+
 const routes = require("./routes");
-
-// app.use(express.json());
-app.use(bodyParser.json())
-    .use("/", routes);
+app.use("/", routes);
 
 process.on("uncaughtException", (err, origin) => {
-    console.log(
-      process.stderr.fd,
-      `Caught exception: ${err}\n` + `Exception origin: ${origin}`
-    );
-  });
+  console.log(
+    process.stderr.fd,
+    `Caught exception: ${err}\n` + `Exception origin: ${origin}`
+  );
+});
 
-mongodb.initDb((error) => {
-  if (error) {
-      console.log("Error connecting to database");
+//Initializing Database and node app
+mongodb.initDb((err) => {
+  if (err) {
+    console.log(err);
   } else {
-      app.listen(PORT, () => {
-          console.log(`Server is running on port ${PORT}`);
-      });
+    app.listen(port, () => {
+      console.log(`Database is listening and node running on port ${port}`);
+    });
   }
 });
