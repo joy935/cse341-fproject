@@ -20,6 +20,59 @@ const saveUser = (req, res, next) => {
   });
 };
 
+
+const saveOrder = async (req, res, next) => {
+  const validationRule = {
+    customerId: "required|string",
+    date: "required|date",
+    total: "required|numeric",
+    bookId: "required|string",
+    status: "required|string",
+  };
+
+  validator(req.body, validationRule, {}, (err, status) => {
+    if (!status) {
+      res.status(412).send({
+        success: false,
+        message: "Validation failed",
+        data: err,
+      });
+    } else {
+      next();
+    }
+  });
+};
+
+const saveBook = (req, res, next) => {
+    const validationRule = {
+        title: "required|string",
+        author: "required|string",
+        categoryId: "required|string",
+        description: "required|string",
+        isbn: "required|string",
+        price: "required|numeric",
+        publisher: "required|string"
+    };
+    validator(req.body, validationRule, {}, (err, status) => {
+        if (!status) {
+            res.status(412).send({
+                success: false,
+                message: "Validation failed",
+                data: err
+            });
+        } else {
+            next();
+        }
+    });
+};
+
+
+
+module.exports = {
+  saveUser,
+  saveOrder,
+  saveBook
+
 const saveCategory = async (req, res, next) => {
   const validationRule = {
       "categoryAcronym": "required|string",
@@ -44,4 +97,5 @@ const saveCategory = async (req, res, next) => {
 module.exports = {
   saveUser,
   saveCategory
+
 };

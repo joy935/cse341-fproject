@@ -33,6 +33,47 @@ content-type: application/json
 DELETE http://localhost:3000/users/674f9cc0573d2632b2266aea HTTP/1.1
 
 
+
+### BOOK ENDPOINT
+
+
+### get all books
+GET http://localhost:3000/books/
+
+### get book by id
+GET http://localhost:3000/books/674f9e3a05f7016678f54422    
+
+### create a book
+POST http://localhost:3000/books/ HTTP/1.1
+content-type: application/json
+
+{
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "categoryId": "674f9e3a05f7016678f54422",
+    "description": "A classic American novel",
+    "isbn": "9780743273565",
+    "price": 10.99,
+    "publisher": "Scribner"
+}       
+
+### update a book
+PUT http://localhost:3000/books/674f9e3a05f7016678f54422 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "categoryId": "674f9e3a05f7016678f54422",
+    "description": "A classic American novel",
+    "isbn": "9780743273565",
+    "price": 10.99,
+    "publisher": "Scribner"
+}   
+
+### delete a book
+DELETE http://localhost:3000/books/674f9e3a05f7016678f54422 HTTP/1.1    
+
 // CATEGORY ENDPOINT
 
 ### get all categories
@@ -63,4 +104,5 @@ content-type: application/json
 
 ### delete a category
 DELETE http://localhost:3000/categories/674796548f918be2dbc6c029 HTTP/1.1
+
 

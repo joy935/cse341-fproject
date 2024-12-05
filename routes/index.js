@@ -6,6 +6,8 @@ router.get("/", (req, res) => {
 
 router.use("/orders", require("./orders"));
 router.use("/users", require("./users"));
+router.use("/books", require("./books"));
 router.use("/categories", require("./categories"));
+
 
 module.exports = router;
