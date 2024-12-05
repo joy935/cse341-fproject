@@ -1,7 +1,7 @@
 {
   "name": "cse341-fproject",
   "version": "1.0.0",
-  "description": "CSE 341 Final Project - Group Project - Smart Book API",
+  "description": "CSE 341 Final Project - Group Project - BookSmart API",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -17,6 +17,7 @@
   "author": "Ana Caroline Facinetto, Leonardo Guarino, Kaitlyn Kryzanski and Veihi Tupai",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.3",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "mongodb": "^6.11.0",
