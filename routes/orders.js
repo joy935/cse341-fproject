@@ -1,15 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const saveOrder = require("../middleware/validate");
+const validation = require("../middleware/validate");
 const ordersController = require("../controllers/orders");
 
 router.get("/", ordersController.getOrders);
 
 router.get("/:id", ordersController.getOrder);
 
-router.post("/", saveOrder, ordersController.createOrder);
+router.post("/", validation.saveOrder, ordersController.createOrder);
 
-router.put("/:id", saveOrder, ordersController.updateOrder);
+router.put("/:id", validation.saveOrder, ordersController.updateOrder);
 
 router.delete("/:id", ordersController.deleteOrder);
 
