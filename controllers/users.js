@@ -28,7 +28,7 @@ const getSingle = async (req, res) => {
     if (!ObjectId.isValid(req.params.id)) {
       return res
         .status(400)
-        .json({ message: "Must use a valid contact id to find a contact." });
+        .json({ message: "Must use a valid user id to find a contact." });
     }
 
     const userId = new ObjectId(req.params.id);
