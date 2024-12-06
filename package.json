@@ -14,7 +14,7 @@
     "type": "git",
     "url": "https://github.com/joy935/cse341-fproject"
   },
-  "author": "Ana Caroline Facinetto, Leonardo Guarino, Kaitlyn Kryzanski and Veihi Tupai",
+  "author": "Ana Caroline Faccinetto, Leonardo Guarino, Kaitlyn Kryzanski and Veihi Tupai",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.3",

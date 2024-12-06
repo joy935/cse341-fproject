@@ -1,0 +1,140 @@
+// USER ENDPOINT
+
+### get all users
+GET http://localhost:3000/users/  
+
+
+### get users by id: e.g.: 
+GET http://localhost:3000/users/674f9e3a05f7016678f54422
+
+
+### Create a user
+POST http://localhost:3000/users/ HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "carlos",
+    "lastName": "Peres",
+    "email": "carlos@email.com",
+    "address": "123 Cash St, Selvy, ST 3321"
+}
+### Update a user
+PUT http://localhost:3000/users/674f9ff7ab88242c6824e7fe HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "carlos",
+    "lastName": "Peres",
+    "email": "carlos@email.com",
+    "address": "123 Cash St, Selvy, ST 3328"
+}
+
+### delete a user
+DELETE http://localhost:3000/users/674f9cc0573d2632b2266aea HTTP/1.1
+
+
+
+### BOOK ENDPOINT
+
+
+### get all books
+GET http://localhost:3000/books/
+
+### get book by id
+GET http://localhost:3000/books/674f9e3a05f7016678f54422    
+
+### create a book
+POST http://localhost:3000/books/ HTTP/1.1
+content-type: application/json
+
+{
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "categoryId": "674f9e3a05f7016678f54422",
+    "description": "A classic American novel",
+    "isbn": "9780743273565",
+    "price": 10.99,
+    "publisher": "Scribner"
+}       
+
+### update a book
+PUT http://localhost:3000/books/674f9e3a05f7016678f54422 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "categoryId": "674f9e3a05f7016678f54422",
+    "description": "A classic American novel",
+    "isbn": "9780743273565",
+    "price": 10.99,
+    "publisher": "Scribner"
+}   
+
+### delete a book
+DELETE http://localhost:3000/books/674f9e3a05f7016678f54422 HTTP/1.1    
+
+// CATEGORY ENDPOINT
+
+### get all categories
+GET http://localhost:3000/categories/  
+
+
+### get categories by id: e.g.: 
+GET http://localhost:3000/categories/674796548f918be2dbc6c029
+
+
+### Create a category
+POST http://localhost:3000/categories/ HTTP/1.1
+content-type: application/json
+
+{
+    "categoryAcronym" : "CHI010",
+    "categoryName" : "Children"
+}
+
+### Update a category
+PUT http://localhost:3000/categories/674796548f918be2dbc6c029 HTTP/1.1
+content-type: application/json
+
+{
+    "categoryAcronym" : "CHI010",
+    "categoryName" : "Children"
+}
+
+### delete a category
+DELETE http://localhost:3000/categories/674796548f918be2dbc6c029 HTTP/1.1
+
+
+### ORDER ENDPOINT
+# get all the orders
+GET http://localhost:3000/orders
+
+# get a specific order
+# ex: 65f1a1b1e214b12345680004
+GET http://localhost:3000/orders/67516b816506fe63d93a6fc3
+
+# create a new order
+POST http://localhost:3000/orders
+{
+    "customerId": "65f1a1b1e214b12345678912" ,
+    "date": "2024-12-12",
+    "total": 24.99,
+    "bookId": "65f1a1b1e214b12345679004",
+    "status": "Pending"
+}
+
+# update a specific order
+# ex: orderId 67516b226506fe63d93a6fc2
+PUT http://localhost:3000/orders/67516b226506fe63d93a6fc2
+{
+    "customerId": "65f1a1b1e214b12345678903" ,
+    "date": "2024-03-03",
+    "total": 21.99,
+    "bookId": "65f1a1b1e214b12345679003",
+    "status": "Shipped"
+}
+
+# delete a specific order
+# ex: id
+DELETE http://localhost:3000/orders/67516b816506fe63d93a6fc3
