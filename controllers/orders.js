@@ -4,7 +4,6 @@ const ObjectId = require("mongodb").ObjectId;
 const getOrders = async (req, res) => {
   // #swagger.tags = ["Orders"]
   // #swagger.summary = "Get all orders"
-  // #swagger.description = "Get all orders"
   try {
     const result = await mongodb.getDb().db().collection("Orders").find();
     result.toArray().then((orders) => {
@@ -21,7 +20,6 @@ const getOrders = async (req, res) => {
 const getOrder = async (req, res) => {
   // #swagger.tags = ["Orders"]
   // #swagger.summary = "Get a specific order"
-  // #swagger.description = "Get a specific order"
   try {
     const orderId = new ObjectId(req.params.id);
     if (!orderId) {
@@ -49,7 +47,6 @@ const getOrder = async (req, res) => {
 const createOrder = async (req, res) => {
   // #swagger.tags = ["Orders"]
   // #swagger.summary = "Create a new order"
-  // #swagger.description = "Create a new order"
   try {
     const order = {
       customerId: req.body.customerId,
@@ -76,7 +73,6 @@ const createOrder = async (req, res) => {
 const updateOrder = async (req, res) => {
   // #swagger.tags = ["Orders"]
   // #swagger.summary = "Update a specific order"
-  // #swagger.description = "Update a specific order"
   try {
     const orderId = new ObjectId(req.params.id);
     if (!orderId) {
@@ -106,7 +102,6 @@ const updateOrder = async (req, res) => {
 
 const deleteOrder = async (req, res) => {
   // #swagger.tags = ["Orders"]
-  // #swagger.description = "Delete a specific order"
   // #swagger.description = "Delete a specific order"
   try {
     const orderId = new ObjectId(req.params.id);
