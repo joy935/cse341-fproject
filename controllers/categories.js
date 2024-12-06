@@ -16,23 +16,6 @@ const getAllCategories = async (req, res) => {
     }
 };
 
-
-// const getSingleCategory = async (req, res) => {
-//     try {
-//         //#swagger.tags=['Categories']
-//         //#swagger.summary = "Get a category by ID"
-//         const categoryId = new ObjectId(req.params.id);
-//         const result = await mongodb.getDb().db().collection('Categories').find({_id: categoryId });
-//         result.toArray().then((categories) => {
-//             res.setHeader('Content-Type', 'application/json');
-//             res.status(200).json(categories[0]);
-//         });
-//     } catch (error) {
-//         res.status(500).json(error || "Some error occurred while fetching the category.")
-//     }
-    
-// };
-
 const getSingleCategory = async (req, res) => {
     try {
         // #swagger.tags = ['Categories']
