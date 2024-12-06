@@ -66,7 +66,7 @@ const updateCategory = async(req, res) => {
 
 const deleteCategory = async(req, res) => {
     //#swagger.tags=['Categories']
-    //#swagger.summary = "Delete a book by ID"
+    //#swagger.summary = "Delete a category by ID"
     const categoryId = new ObjectId(req.params.id);
     const response = await mongodb.getDb().db().collection('Categories').deleteOne({_id: categoryId});
     if (response.deletedCount > 0) {
