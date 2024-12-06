@@ -68,7 +68,7 @@ const saveBook = (req, res, next) => {
 
 const saveCategory = async (req, res, next) => {
   const validationRule = {
-      "categoryAcronym": "required|string",
+      "categoryCode": "required|string",
       "categoryName": "required|string"
   };
 

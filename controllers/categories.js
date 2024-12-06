@@ -37,7 +37,7 @@ const createCategory = async(req, res) => {
     //#swagger.tags=['Categories']
     //#swagger.summary = "Create a new category"
     const category = {
-        categoryAcronym: req.body.categoryAcronym,
+        categoryCode: req.body.categoryCode,
         categoryName: req.body.categoryName
     };
     const response = await mongodb.getDb().db().collection('Categories').insertOne(category);
@@ -53,7 +53,7 @@ const updateCategory = async(req, res) => {
     //#swagger.summary = "Update a category by ID"
     const categoryId = new ObjectId(req.params.id);
     const category = {
-        categoryAcronym: req.body.categoryAcronym,
+        categoryCode: req.body.categoryCode,
         categoryName: req.body.categoryName
     };
     const response = await mongodb.getDb().db().collection('Categories').replaceOne({_id: categoryId}, category);
