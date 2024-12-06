@@ -106,7 +106,7 @@ const updateOrder = async (req, res) => {
 
 const deleteOrder = async (req, res) => {
   // #swagger.tags = ["Orders"]
-  // #swagger.description = "Delete a specific order"
+  // #swagger.summary = "Delete a specific order"
   // #swagger.description = "Delete a specific order"
   try {
     const orderId = new ObjectId(req.params.id);

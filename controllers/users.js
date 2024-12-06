@@ -2,6 +2,8 @@ const mongodb = require("../data/database");
 const ObjectId = require("mongodb").ObjectId;
 
 const getAll = async (req, res) => {
+  //#swagger.tags = ["Users"]
+  //#swagger.summary = "Get all users"
   try {
     const lists = await mongodb
       .getDb()
@@ -18,7 +20,8 @@ const getAll = async (req, res) => {
 };
 
 const getSingle = async (req, res) => {
-  //#swagger.tags=['users']
+  //#swagger.tags=['Users']
+  //#swagger.summary = "Get an user by ID"
 
   try {
     // Check if the provided ID is valid
@@ -54,7 +57,8 @@ const getSingle = async (req, res) => {
 };
 
 const createUser = async (req, res) => {
-  //#swagger.tags=['user']
+  //#swagger.tags=['Users']
+  //#swagger.summary = "Create a new user"
 
   const user = {
     firstName: req.body.firstName,
@@ -78,7 +82,8 @@ const createUser = async (req, res) => {
 };
 
 const updateUser = async (req, res) => {
-  //#swagger.tags=['users']
+  //#swagger.tags=['Users']
+  //#swagger.summary = "Update a user by ID"
 
   const userId = new ObjectId(req.params.id);
   const user = {
@@ -102,7 +107,8 @@ const updateUser = async (req, res) => {
 };
 
 const deleteUser = async (req, res) => {
-  //#swagger.tags=['users']
+  //#swagger.tags=['Users']
+  //#swagger.summary = "Delete an user by ID"
 
   const usersId = new ObjectId(req.params.id);
   const response = await mongodb
