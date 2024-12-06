@@ -47,7 +47,7 @@ const saveBook = (req, res, next) => {
     const validationRule = {
         title: "required|string",
         author: "required|string",
-        categoryId: "required|string",
+        categoryCode: "required|string",
         description: "required|string",
         isbn: "required|string",
         price: "required|numeric",

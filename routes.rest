@@ -50,7 +50,7 @@ content-type: application/json
 {
     "title": "The Great Gatsby",
     "author": "F. Scott Fitzgerald",
-    "categoryId": "674f9e3a05f7016678f54422",
+    "categoryCode": "674f9e3a05f7016678f54422",
     "description": "A classic American novel",
     "isbn": "9780743273565",
     "price": 10.99,
@@ -64,7 +64,7 @@ content-type: application/json
 {
     "title": "The Great Gatsby",
     "author": "F. Scott Fitzgerald",
-    "categoryId": "674f9e3a05f7016678f54422",
+    "categoryCode": "674f9e3a05f7016678f54422",
     "description": "A classic American novel",
     "isbn": "9780743273565",
     "price": 10.99,

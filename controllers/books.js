@@ -42,7 +42,7 @@ const createBook = async (req, res) => {
         const book = {
             title: req.body.title,
             author: req.body.author,
-            categoryId: req.body.categoryId,
+            categoryCode: req.body.categoryCode,
             description: req.body.description,
             isbn: req.body.isbn,
             price: req.body.price,
@@ -70,7 +70,7 @@ const updateBook = async (req, res) => {
         const book = {
             title: req.body.title,
             author: req.body.author,
-            categoryId: req.body.categoryId,
+            categoryCode: req.body.categoryCode,
             description: req.body.description,
             isbn: req.body.isbn,
             price: req.body.price,
