@@ -89,7 +89,7 @@ POST http://localhost:3000/categories/ HTTP/1.1
 content-type: application/json
 
 {
-    "categoryAcronym" : "CHI010",
+    "categoryCode" : "CHI010",
     "categoryName" : "Children"
 }
 
@@ -98,7 +98,7 @@ PUT http://localhost:3000/categories/674796548f918be2dbc6c029 HTTP/1.1
 content-type: application/json
 
 {
-    "categoryAcronym" : "CHI010",
+    "categoryCode" : "CHI010",
     "categoryName" : "Children"
 }
 
