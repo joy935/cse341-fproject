@@ -17,21 +17,59 @@ const getAllCategories = async (req, res) => {
 };
 
 
+// const getSingleCategory = async (req, res) => {
+//     try {
+//         //#swagger.tags=['Categories']
+//         //#swagger.summary = "Get a category by ID"
+//         const categoryId = new ObjectId(req.params.id);
+//         const result = await mongodb.getDb().db().collection('Categories').find({_id: categoryId });
+//         result.toArray().then((categories) => {
+//             res.setHeader('Content-Type', 'application/json');
+//             res.status(200).json(categories[0]);
+//         });
+//     } catch (error) {
+//         res.status(500).json(error || "Some error occurred while fetching the category.")
+//     }
+    
+// };
+
 const getSingleCategory = async (req, res) => {
     try {
-        //#swagger.tags=['Categories']
-        //#swagger.summary = "Get a category by ID"
+        // #swagger.tags = ['Categories']
+        // #swagger.summary = "Get a category by ID"
+
+        // Validate the provided ID
+        if (!ObjectId.isValid(req.params.id)) {
+            return res
+                .status(400)
+                .json({ message: "Must use a valid ID to find a category." });
+        }
+
         const categoryId = new ObjectId(req.params.id);
-        const result = await mongodb.getDb().db().collection('Categories').find({_id: categoryId });
-        result.toArray().then((categories) => {
-            res.setHeader('Content-Type', 'application/json');
-            res.status(200).json(categories[0]);
-        });
+
+        // Fetch the category document from the database
+        const result = await mongodb
+            .getDb()
+            .db()
+            .collection('Categories')
+            .findOne({ _id: categoryId });
+
+        // If the category isn't found, return a 404 status
+        if (!result) {
+            return res.status(404).json({ message: "Category not found" });
+        }
+
+        // Set the response header and send the category data
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(result);
     } catch (error) {
-        res.status(500).json(error || "Some error occurred while fetching the category.")
+        console.error("Error fetching single category:", error);
+        res.status(500).json({
+            message: "An error occurred while retrieving the category.",
+        });
     }
-    
 };
+
 
 const createCategory = async(req, res) => {
     //#swagger.tags=['Categories']
