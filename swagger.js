@@ -5,7 +5,7 @@ const doc = {
       title: 'CSE341 Final Project - Fall 2024: Book Smart API',
       description: 'This is a group project created as part of the BYU-Idaho class requirements for CSE341: Web Services.'
     },
-    host: 'localhost:3000',
+    host: 'booksmart-ogca.onrender.com',
     schemes: ['http', 'https']
 };
 

@@ -5,7 +5,7 @@
     "description": "This is a group project created as part of the BYU-Idaho class requirements for CSE341: Web Services.",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "booksmart-ogca.onrender.com",
   "basePath": "/",
   "schemes": [
     "http",
