@@ -1,4 +1,5 @@
 const validator = require("../helpers/validate");
+const mongodb = require("../data/database");
 
 const saveUser = (req, res, next) => {
   const validationRule = {
@@ -29,15 +30,44 @@ const saveOrder = async (req, res, next) => {
     status: "required|string",
   };
 
-  validator(req.body, validationRule, {}, (err, status) => {
+  validator(req.body, validationRule, {}, async (err, status) => {
     if (!status) {
-      res.status(412).send({
+      return res.status(412).send({
         success: false,
         message: "Validation failed",
         data: err,
       });
-    } else {
+    } 
+
+    const bookId = req.body.bookId;
+    const userId = req.body.customerId;
+
+    try {
+      // check if the book exists
+      const bookExists = await mongodb.getDb().db().collection("Books").findOne({ _id: bookId });
+      if (!bookExists) {
+        return res.status(404).json({
+          success: false,
+          message: "Book not found.",
+        });
+      }
+
+      // check if the customer exists
+      const customerExists = await mongodb.getDb().db().collection("Users").findOne({ _id: userId });
+      if (!customerExists) {
+        return res.status(404).json({
+          success: false,
+          message: "Customer not found.",
+        });
+      }
+
       next();
+    } catch (error) {
+      res.status(500).json({
+        success: false,
+        message: "An error occurred during validation.",
+        error: error.message,
+      });
     }
   });
 };
