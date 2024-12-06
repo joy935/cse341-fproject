@@ -5,6 +5,7 @@ const getAllCategories = async (req, res) => {
 
     try {
         //#swagger.tags=['Categories']
+        //#swagger.summary = "Get all categories"
         const result = await mongodb.getDb().db().collection('Categories').find();
         result.toArray().then((categories) => {
             res.setHeader('Content-Type', 'application/json');
@@ -19,6 +20,7 @@ const getAllCategories = async (req, res) => {
 const getSingleCategory = async (req, res) => {
     try {
         //#swagger.tags=['Categories']
+        //#swagger.summary = "Get a category by ID"
         const categoryId = new ObjectId(req.params.id);
         const result = await mongodb.getDb().db().collection('Categories').find({_id: categoryId });
         result.toArray().then((categories) => {
@@ -33,6 +35,7 @@ const getSingleCategory = async (req, res) => {
 
 const createCategory = async(req, res) => {
     //#swagger.tags=['Categories']
+    //#swagger.summary = "Create a new category"
     const category = {
         categoryAcronym: req.body.categoryAcronym,
         categoryName: req.body.categoryName
@@ -47,6 +50,7 @@ const createCategory = async(req, res) => {
 
 const updateCategory = async(req, res) => {
     //#swagger.tags=['Categories']
+    //#swagger.summary = "Update a category by ID"
     const categoryId = new ObjectId(req.params.id);
     const category = {
         categoryAcronym: req.body.categoryAcronym,
@@ -62,6 +66,7 @@ const updateCategory = async(req, res) => {
 
 const deleteCategory = async(req, res) => {
     //#swagger.tags=['Categories']
+    //#swagger.summary = "Delete a book by ID"
     const categoryId = new ObjectId(req.params.id);
     const response = await mongodb.getDb().db().collection('Categories').deleteOne({_id: categoryId});
     if (response.deletedCount > 0) {
