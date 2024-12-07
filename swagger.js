@@ -6,7 +6,7 @@ const doc = {
       description: 'This is a group project created as part of the BYU-Idaho class requirements for CSE341: Web Services.'
     },
     host: 'booksmart-ogca.onrender.com',
-    schemes: ['http', 'https']
+    schemes: ['https']
 };
 
 const outputFile = './swagger.json';
