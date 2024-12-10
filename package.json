@@ -4,7 +4,7 @@
   "description": "CSE 341 Final Project - Group Project - BookSmart API",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node server.js",
     "dev": "nodemon server.js",
     "lint": "eslint .",
@@ -31,8 +31,10 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "globals": "^15.13.0",
+    "jest": "^29.7.0",
     "nodemon": "^3.1.7",
     "prettier": "^3.4.1",
+    "supertest": "^7.0.0",
     "swagger-autogen": "^2.23.7"
   }
 }
