@@ -119,8 +119,8 @@ POST http://localhost:3000/orders
 {
     "customerId": "65f1a1b1e214b12345678912" ,
     "date": "2024-12-12",
-    "total": 24.99,
-    "bookId": "65f1a1b1e214b12345679004",
+    "total": 34.99,
+    "bookId": "6753320314b203cba734c48c",
     "status": "Pending"
 }
 

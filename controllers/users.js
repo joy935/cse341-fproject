@@ -77,7 +77,7 @@ const createUser = async (req, res) => {
   } else {
     res
       .status(500)
-      .json(response.error || "An error occured whilst creating the user");
+      .json(response.error || "An error occurred whilst creating the user");
   }
 };
 
@@ -102,7 +102,7 @@ const updateUser = async (req, res) => {
   } else {
     res
       .status(500)
-      .json(response.error || "Some error occured whilst updating the user");
+      .json(response.error || "Some error occurred whilst updating the user");
   }
 };
 
@@ -121,7 +121,7 @@ const deleteUser = async (req, res) => {
   } else {
     res
       .status(500)
-      .json(response.error || "An error occured whilst deleting the user");
+      .json(response.error || "An error occurred whilst deleting the user");
   }
 };
 
