@@ -21,7 +21,7 @@ const getOrder = async (req, res) => {
     if (!ObjectId.isValid(req.params.id)) {
       return res
         .status(400)
-        .json({ message: "Must use a valid order id to find a contact." });
+        .json({ message: "Must use a valid order id to find an order." });
     }
     const orderId = new ObjectId(req.params.id);
     const result = await mongodb.getDb().db().collection("Orders").findOne({ _id: orderId });
