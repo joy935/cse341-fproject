@@ -13,7 +13,7 @@ POST http://localhost:3000/users/ HTTP/1.1
 content-type: application/json
 
 {
-    "firstName": "carlos",
+    "firstName": "Carlos",
     "lastName": "Peres",
     "email": "carlos@email.com",
     "address": "123 Cash St, Selvy, ST 3321"
@@ -23,7 +23,7 @@ PUT http://localhost:3000/users/674f9ff7ab88242c6824e7fe HTTP/1.1
 content-type: application/json
 
 {
-    "firstName": "carlos",
+    "firstName": "Carlos",
     "lastName": "Peres",
     "email": "carlos@email.com",
     "address": "123 Cash St, Selvy, ST 3328"
@@ -117,10 +117,10 @@ GET http://localhost:3000/orders/67516b816506fe63d93a6fc3
 # create a new order
 POST http://localhost:3000/orders
 {
+    "bookId": "6753320314b203cba734c48c",
     "customerId": "65f1a1b1e214b12345678912" ,
     "date": "2024-12-12",
-    "total": 34.99,
-    "bookId": "6753320314b203cba734c48c",
+    "total": 14.99,
     "status": "Pending"
 }
 
@@ -128,10 +128,10 @@ POST http://localhost:3000/orders
 # ex: orderId 67516b226506fe63d93a6fc2
 PUT http://localhost:3000/orders/67516b226506fe63d93a6fc2
 {
+    "bookId": "65f1a1b1e214b12345679003",
     "customerId": "65f1a1b1e214b12345678903" ,
     "date": "2024-03-03",
     "total": 21.99,
-    "bookId": "65f1a1b1e214b12345679003",
     "status": "Shipped"
 }
 

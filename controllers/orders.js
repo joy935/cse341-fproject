@@ -21,6 +21,11 @@ const getOrder = async (req, res) => {
   // #swagger.tags = ["Orders"]
   // #swagger.summary = "Get a specific order"
   try {
+    if (!ObjectId.isValid(req.params.id)) {
+      return res
+        .status(400)
+        .json({ message: "Must use a valid order id to find an order." });
+    }
     const orderId = new ObjectId(req.params.id);
     if (!orderId) {
       res.status(500).json("Order ID not found.");

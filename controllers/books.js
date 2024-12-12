@@ -21,6 +21,11 @@ const getBook = async (req, res) => {
   // #swagger.tags = ["Books"]
   // #swagger.summary = "Get a book by ID"
   try {
+    if (!ObjectId.isValid(req.params.id)) {
+      return res
+        .status(400)
+        .json({ message: "Must use a valid book id to find a book." });
+    }
     const bookId = new ObjectId(req.params.id);
     if (!bookId) {
       res.status(500).json("Book ID not found.");
