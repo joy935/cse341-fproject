@@ -5,7 +5,12 @@ const getOrders = async (req, res) => {
   // #swagger.tags = ["Orders"]
   // #swagger.summary = "Get all orders"
   try {
-    const result = await mongodb.getDb().db().collection("Orders").find().toArray();
+    const result = await mongodb
+      .getDb()
+      .db()
+      .collection("Orders")
+      .find()
+      .toArray();
     res.setHeader("Content-Type", "application/json");
     res.status(200).json(result);
   } catch (err) {
@@ -24,7 +29,11 @@ const getOrder = async (req, res) => {
         .json({ message: "Must use a valid order id to find an order." });
     }
     const orderId = new ObjectId(req.params.id);
-    const result = await mongodb.getDb().db().collection("Orders").findOne({ _id: orderId });
+    const result = await mongodb
+      .getDb()
+      .db()
+      .collection("Orders")
+      .findOne({ _id: orderId });
 
     if (!result) {
       return res.status(404).json({ message: "Order not found" });
