@@ -1,12 +1,20 @@
+/* eslint-env jest */
+
 const request = require("supertest");
 const express = require("express");
 const router = require("../routes/orders");
 const ordersController = require("../controllers/orders");
 
+// mock the orders controller
 jest.mock("../controllers/orders");
+// mock the isAuthenticated middleware
+jest.mock('../middleware/authenticate', () => ({
+  isAuthenticated: (req, res, next) => next(),
+}));
 
 const app = express();
-app.use(express.json()).use("/orders", router);
+app.use(express.json());
+app.use("/orders", router);
 
 describe("Orders routes", () => {
   describe("GET /orders", () => {
