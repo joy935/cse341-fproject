@@ -24,7 +24,7 @@ app
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader(
       "Access-Control-Allow-Headers",
-      "Origin, X-Requeted-With, Content-Type, Accept, Z-Key"
+      "Origin, X-Requested-With, Content-Type, Accept, Z-Key"
     );
     res.setHeader(
       "Access-Control-Allow-Methods",
@@ -33,7 +33,7 @@ app
     next();
   })
   .use(cors({ methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"] }))
-  .use(cors({ rigin: "*" }))
+  .use(cors({ origin: "*" }))
   .use("/", routes);
 
 passport.use(
