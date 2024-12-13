@@ -78,14 +78,14 @@ describe("GET /orders/:id", () => {
     expect(response.body).toEqual(mockOrder);
   });
 
-  // test for order not found
-  test("it should return a 404 if the order does not exist", async () => {
+  // test for invalid id
+  test("it should return an error message for an invalid id", async () => {
     ordersController.getOrder.mockImplementation((req, res) => {
-      res.status(404).json("Order not found.");
+      res.status(400).json({ message: "Must use a valid order id to find an order." });
     });
 
-    const response = await request(app).get("/orders/1");
-    expect(response.statusCode).toBe(404);
-    expect(response.body).toEqual("Order not found.");
+    const response = await request(app).get("/orders/invalid-id");
+    expect(response.statusCode).toBe(400);
+    expect(response.body).toEqual({ message: "Must use a valid order id to find an order." });
   });
 });
