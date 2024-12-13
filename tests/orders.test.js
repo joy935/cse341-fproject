@@ -6,7 +6,7 @@ const ordersController = require("../controllers/orders");
 // mock the orders controller
 jest.mock("../controllers/orders");
 // mock the isAuthenticated middleware
-jest.mock('../middleware/authenticate', () => ({
+jest.mock("../middleware/authenticate", () => ({
   isAuthenticated: (req, res, next) => next(),
 }));
 

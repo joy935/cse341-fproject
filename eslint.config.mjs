@@ -20,5 +20,5 @@ export default [
     rules: {
       ...jestPlugin.configs.recommended.rules,
     },
-  }
+  },
 ];
