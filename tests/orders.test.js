@@ -78,7 +78,7 @@ describe("GET /orders/:id", () => {
     expect(response.body).toEqual(mockOrder);
   });
 
-  // test for order not found
+  // test for invalid id
   test("it should return an error message for an invalid id", async () => {
     ordersController.getOrder.mockImplementation((req, res) => {
       res.status(400).json({ message: "Must use a valid order id to find an order." });
