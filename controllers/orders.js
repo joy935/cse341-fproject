@@ -5,15 +5,17 @@ const getOrders = async (req, res) => {
   // #swagger.tags = ["Orders"]
   // #swagger.summary = "Get all orders"
   try {
-    const result = await mongodb.getDb().db().collection("Orders").find();
-    result.toArray().then((orders) => {
-      res.setHeader("Content-Type", "application/json");
-      res.status(200).json(orders);
-    });
-  } catch (error) {
-    res
-      .status(500)
-      .json(error || "Some error occurred while fetching the orders.");
+    const result = await mongodb
+      .getDb()
+      .db()
+      .collection("Orders")
+      .find()
+      .toArray();
+    res.setHeader("Content-Type", "application/json");
+    res.status(200).json(result);
+  } catch (err) {
+    console.error("Error fetching orders:", err);
+    res.status(400).json({ message: err.message });
   }
 };
 
@@ -21,26 +23,28 @@ const getOrder = async (req, res) => {
   // #swagger.tags = ["Orders"]
   // #swagger.summary = "Get a specific order"
   try {
-    const orderId = new ObjectId(req.params.id);
-    if (!orderId) {
-      res.status(500).json("Order ID not found.");
+    if (!ObjectId.isValid(req.params.id)) {
+      return res
+        .status(400)
+        .json({ message: "Must use a valid order id to find an order." });
     }
+    const orderId = new ObjectId(req.params.id);
     const result = await mongodb
       .getDb()
       .db()
       .collection("Orders")
-      .find({ _id: orderId });
+      .findOne({ _id: orderId });
+
     if (!result) {
-      res.status(404).json("Order not found.");
+      return res.status(404).json({ message: "Order not found" });
     }
-    result.toArray().then((orders) => {
-      res.setHeader("Content-Type", "application/json");
-      res.status(200).json(orders[0]);
-    });
-  } catch (error) {
+    res.setHeader("Content-Type", "application/json");
+    res.status(200).json(result);
+  } catch (err) {
+    console.error("Error fetching an order:", err);
     res
       .status(500)
-      .json(error || "Some error occurred while fetching the order.");
+      .json({ message: "An error occurred while retrieving the order." });
   }
 };
 
@@ -65,7 +69,7 @@ const createOrder = async (req, res) => {
     } else {
       res.status(500).json("Some error occurred while creating the order.");
     }
-  } catch {
+  } catch (error) {
     res.status(500).json(error || "An unexpected error occurred.");
   }
 };
