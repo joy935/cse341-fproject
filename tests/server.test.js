@@ -12,7 +12,7 @@ app
     session({
       secret: "secret",
       resave: false,
-      saveUnitialized: true,
+      saveUninitialized: true,
     })
   )
   .use(passport.initialize())
