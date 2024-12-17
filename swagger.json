@@ -62,7 +62,7 @@
                   "example": "Peres"
                 },
                 "email": {
-                  "example": "carlosemailcom"
+                  "example": "carlos@email.com"
                 },
                 "address": {
                   "example": "123 Cash St, Selvy, ST 3321"
@@ -222,7 +222,7 @@
                   "example": "9780743273565"
                 },
                 "price": {
-                  "example": "eleven"
+                  "example": "10.99"
                 },
                 "publisher": {
                   "example": "Scribner"
@@ -379,10 +379,10 @@
                   "example": "65f1a1b1e214b12345678912"
                 },
                 "date": {
-                  "example": "2024-22-12"
+                  "example": "2024-12-12"
                 },
                 "total": {
-                  "example": "fifteen"
+                  "example": "14.99"
                 },
                 "status": {
                   "example": "Pending"
@@ -602,7 +602,7 @@
               "type": "object",
               "properties": {
                 "categoryCode": {
-                  "example": "CHI011"
+                  "example": "CHI010"
                 },
                 "categoryName": {
                   "example": "Children"
