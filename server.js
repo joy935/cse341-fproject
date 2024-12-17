@@ -15,7 +15,7 @@ app
       // this is the basic express session({...}) initialization.
       secret: "secret",
       resave: false,
-      saveUnitialized: true,
+      saveUninitialized: true,
     })
   )
   .use(passport.initialize()) //Init passport in every route call
