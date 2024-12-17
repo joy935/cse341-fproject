@@ -56,16 +56,16 @@
               "type": "object",
               "properties": {
                 "firstName": {
-                  "example": "any"
+                  "example": "Carlos"
                 },
                 "lastName": {
-                  "example": "any"
+                  "example": "Peres"
                 },
                 "email": {
-                  "example": "any"
+                  "example": "carlosemailcom"
                 },
                 "address": {
-                  "example": "any"
+                  "example": "123 Cash St, Selvy, ST 3321"
                 }
               }
             }
@@ -131,16 +131,16 @@
               "type": "object",
               "properties": {
                 "firstName": {
-                  "example": "any"
+                  "example": "Carlos"
                 },
                 "lastName": {
-                  "example": "any"
+                  "example": "Peres"
                 },
                 "email": {
-                  "example": "any"
+                  "example": "carlos@email.com"
                 },
                 "address": {
-                  "example": "any"
+                  "example": "123 Cash St, Selvy, ST 3328"
                 }
               }
             }
@@ -207,25 +207,25 @@
               "type": "object",
               "properties": {
                 "title": {
-                  "example": "any"
+                  "example": "The Great Gatsby"
                 },
                 "author": {
-                  "example": "any"
+                  "example": "F. Scott Fitzgerald"
                 },
                 "categoryCode": {
-                  "example": "any"
+                  "example": "674f9e3a05f7016678f54422"
                 },
                 "description": {
-                  "example": "any"
+                  "example": "A classic American novel"
                 },
                 "isbn": {
-                  "example": "any"
+                  "example": "9780743273565"
                 },
                 "price": {
-                  "example": "any"
+                  "example": "eleven"
                 },
                 "publisher": {
-                  "example": "any"
+                  "example": "Scribner"
                 }
               }
             }
@@ -288,25 +288,25 @@
               "type": "object",
               "properties": {
                 "title": {
-                  "example": "any"
+                  "example": "The Great Gatsby"
                 },
                 "author": {
-                  "example": "any"
+                  "example": "F. Scott Fitzgerald"
                 },
                 "categoryCode": {
-                  "example": "any"
+                  "example": "674f9e3a05f7016678f54422"
                 },
                 "description": {
-                  "example": "any"
+                  "example": "A classic American novel"
                 },
                 "isbn": {
-                  "example": "any"
+                  "example": "9780743273565"
                 },
                 "price": {
-                  "example": "any"
+                  "example": "10.99"
                 },
                 "publisher": {
-                  "example": "any"
+                  "example": "Scribner"
                 }
               }
             }
@@ -373,19 +373,19 @@
               "type": "object",
               "properties": {
                 "bookId": {
-                  "example": "any"
+                  "example": "6753320314b203cba734c48c"
                 },
                 "customerId": {
-                  "example": "any"
+                  "example": "65f1a1b1e214b12345678912"
                 },
                 "date": {
-                  "example": "any"
+                  "example": "2024-22-12"
                 },
                 "total": {
-                  "example": "any"
+                  "example": "fifteen"
                 },
                 "status": {
-                  "example": "any"
+                  "example": "Pending"
                 }
               }
             }
@@ -451,19 +451,19 @@
               "type": "object",
               "properties": {
                 "bookId": {
-                  "example": "any"
+                  "example": "65f1a1b1e214b12345679003"
                 },
                 "customerId": {
-                  "example": "any"
+                  "example": "65f1a1b1e214b12345678903"
                 },
                 "date": {
-                  "example": "any"
+                  "example": "2024-12-12"
                 },
                 "total": {
-                  "example": "any"
+                  "example": "14.99"
                 },
                 "status": {
-                  "example": "any"
+                  "example": "Shipped"
                 }
               }
             }
@@ -533,10 +533,10 @@
               "type": "object",
               "properties": {
                 "categoryCode": {
-                  "example": "any"
+                  "example": "CHI010"
                 },
                 "categoryName": {
-                  "example": "any"
+                  "example": "Children"
                 }
               }
             }
@@ -602,10 +602,10 @@
               "type": "object",
               "properties": {
                 "categoryCode": {
-                  "example": "any"
+                  "example": "CHI011"
                 },
                 "categoryName": {
-                  "example": "any"
+                  "example": "Children"
                 }
               }
             }
